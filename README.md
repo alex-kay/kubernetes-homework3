@@ -16,6 +16,4 @@
 
 4. Deployed successfully, using same ingress from second task. Changed the tutorial code just a bit, changing storage class and resource requests. [Deployed app link here](https://alex-wp.kubelab.spainip.es)
 
-5. ~~Added nodeSelector for pod templates on deployments for only storage_database:true nodes.~~
-
-6. *Todo: check volumes, like uploading pictures to wordpress and checking files on the mounts.*
+5. Checked volumes, like uploading pictures to wordpress, recreating pods and checking for persistance.
