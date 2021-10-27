@@ -69,5 +69,5 @@ spec:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
           claimName: wp-pv-claim
-      nodeSelector:
-        database_storage: true
+      # nodeSelector:
+      #   database_storage: true

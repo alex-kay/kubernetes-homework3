@@ -67,5 +67,5 @@ spec:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
           claimName: mysql-pv-claim
-      nodeSelector:
-        database_storage: true
+      # nodeSelector:
+      #   database_storage: true
