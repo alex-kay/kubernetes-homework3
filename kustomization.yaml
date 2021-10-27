@@ -1,7 +1,9 @@
 secretGenerator:
 - name: mysql-pass
+  namespace: alex
   literals:
   - password=YOUR_PASSWORD
 resources:
   - mysql.yaml
   - wordpress.yaml
+  - tls-ingress.yaml
