@@ -27,8 +27,6 @@ spec:
     requests:
       storage: 10Gi
   storageClassName: hcloud-volumes
-  nodeSelector:
-    database_storage: true
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -69,3 +67,5 @@ spec:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
           claimName: mysql-pv-claim
+      nodeSelector:
+        database_storage: true
