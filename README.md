@@ -17,3 +17,9 @@
 4. Deployed successfully, using same ingress from second task. Changed the tutorial code just a bit, changing storage class and resource requests. [Deployed app link here](https://alex-wp.kubelab.spainip.es)
 
 5. Checked volumes, like uploading pictures to wordpress, recreating pods and checking for persistance.
+
+## Task update
+
+* Exercise:Deploy a stateful app which requires a DB of some sort (or persistent file storage) like a Blog, a Wiki, a Guestbook, Forum.... with storage that will SURVIVE deleting and re-deploying the app
+* Tip if you want to use Helm Charts: [Artifact Hub Find, install and publish Kubernetes packages](https://artifacthub.io/)
+* And after the app is deployed, convert it into a helm chart
