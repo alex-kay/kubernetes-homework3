@@ -1,0 +1,5 @@
+secretGenerator:
+- name: mysql-pass
+  namespace: alex-helm
+  literals:
+  - password=YOUR_PASSWORD

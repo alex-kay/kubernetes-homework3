@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: {{ .Values.ingress.metadata.clusterissuer }}
+  name: {{ .Values.ingress.metadata.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "wordpress-mysql.labels" . | nindent 4 }}
+spec:
+  rules:
+  - host: {{ .Values.ingress.spec.rules.host }}
+    http:
+      paths:
+      - backend:
+          service:
+            name: wordpress
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - {{ .Values.ingress.tls.host }}
+    secretName: {{ .Values.ingress.tls.secretName }}
