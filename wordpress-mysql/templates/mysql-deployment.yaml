@@ -16,18 +16,12 @@ spec:
   template:
     metadata:
       labels:
-        {{- include "wordpress-mysql.labels" . | nindent 4 }}
+        app: mysql
         tier: mysql
     spec:
       containers:
       - image: {{ .Values.mysql.deployment.image }}
         name: {{ .Values.mysql.name }}
-        env:
-        - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
         ports:
         - containerPort: {{ .Values.mysql.deployment.containerPort }}
           name: {{ .Values.mysql.name }}
